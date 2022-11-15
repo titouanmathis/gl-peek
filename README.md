@@ -13,6 +13,8 @@ pbpaste > /usr/local/bin/gl-peek
 chmod +x /usr/local/bin/gl-peek
 ```
 
+You will need to have [`jq`](https://github.com/stedolan/jq) installed and available in your path as well.
+
 ## Usage
 
 ```sh
