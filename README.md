@@ -9,7 +9,7 @@ Install it manually by pasting the content of the `src/gl-peek.sh` file in a fil
 Example on macOS:
 
 ```sh
-pbpaste > /usr/local/bin/gl-peek
+curl -s https://raw.githubusercontent.com/titouanmathis/gl-peek/main/src/gl-peek.sh > /usr/local/bin/gl-peek
 chmod +x /usr/local/bin/gl-peek
 ```
 
