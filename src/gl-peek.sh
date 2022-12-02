@@ -16,34 +16,34 @@ Take a quick look at a repository from GitLab.
 
 Usage:
 
-	gl-peek <URL>
+    gl-peek <URL>
 
 Example:
 
-	gl-peek https://gitlab.com/org/repo
-	gl-peek https://gitlab.com/org/repo/-/tree/<BRANCH>
-	gl-peek https://gitlab.com/org/repo/-/merge_requests/<ID>
-	gl-peek https://gitlab.com/org/repo/-/commit/<SHA>
+    gl-peek https://gitlab.com/org/repo
+    gl-peek https://gitlab.com/org/repo/-/tree/<branch>
+    gl-peek https://gitlab.com/org/repo/-/merge_requests/<id>
+    gl-peek https://gitlab.com/org/repo/-/commit/<sha>
 
-	gl-peek https://gitlab.mydomain.com/org/repo
-	gl-peek https://gitlab.mydomain.com/org/repo/-/tree/<BRANCH>
-	gl-peek https://gitlab.mydomain.com/org/repo/-/merge_requests/<ID>
-	gl-peek https://gitlab.mydomain.com/org/repo/-/commit/<SHA>
+    gl-peek https://gitlab.mydomain.com/org/repo
+    gl-peek https://gitlab.mydomain.com/org/repo/-/tree/<branch>
+    gl-peek https://gitlab.mydomain.com/org/repo/-/merge_requests/<id>
+    gl-peek https://gitlab.mydomain.com/org/repo/-/commit/<sha>
 
 Configuration:
 
-	Add a `~/.gl-keep` file with your GitLab tokens to access private repositories:
+    Add a `~/.gl-peek` file with your GitLab tokens to access private repositories:
 
-	```
-	# For gitlab.com
-	GITLAB_TOKEN="..."
+    ```
+    # For gitlab.com
+    GITLAB_TOKEN="..."
 
-	# For gitlab.fqdn.com
-	GITLAB_TOKEN_GITLAB_FQDN_COM="..."
+    # For gitlab.fqdn.com
+    GITLAB_TOKEN_GITLAB_FQDN_COM="..."
 
-	# Define your editor of choice
-	EDITOR="subl"
-	```
+    # Define your editor of choice
+    EDITOR="subl"
+    ```
 '
 	exit
 fi
