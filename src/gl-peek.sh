@@ -73,8 +73,8 @@ background_task() {
 }
 
 load_token() {
-	if [[ -f "$HOME/.gl-keep" ]]; then
-		source "$HOME/.gl-keep"
+	if [[ -f "$HOME/.gl-peek" ]]; then
+		source "$HOME/.gl-peek"
 	fi
 }
 
