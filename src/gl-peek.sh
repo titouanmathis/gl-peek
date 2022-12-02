@@ -64,8 +64,12 @@ readonly URI_REGEX='^(([^:/?#]+):)?(//((([^:/?#]+)@)?([^:/?#]+)(:([0-9]+))?))?(/
 #                                  |  4 authority
 #                                  3 //…
 
-parse_host () {
+parse_host() {
 	[[ "$@" =~ $URI_REGEX ]] && echo "${BASH_REMATCH[7]}"
+}
+
+parse_path() {
+	[[ "$@" =~ $URI_REGEX ]] && echo "${BASH_REMATCH[10]}"
 }
 
 background_task() {
