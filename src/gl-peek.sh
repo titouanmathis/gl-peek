@@ -68,8 +68,8 @@ parse_host () {
 	[[ "$@" =~ $URI_REGEX ]] && echo "${BASH_REMATCH[7]}"
 }
 
-parse_path () {
-	[[ "$@" =~ $URI_REGEX ]] && echo "${BASH_REMATCH[10]}"
+background_task() {
+	eval "$@" &>/dev/null & disown;
 }
 
 load_token() {
@@ -120,10 +120,9 @@ fetch_archive() {
 	local folder="/tmp/$folder_name"
 
 	mkdir -p $folder
-	$($EDITOR "$folder")
 	cd $(dirname $folder)
-
-	curl -s "https://$GITLAB_DOMAIN/api/v4/projects/$org%2F$repository/repository/archive.tar.gz?sha=$branch_or_commit" -H "Authorization: Bearer $GITLAB_TOKEN" | tar -zx
+	background_task "curl -s 'https://$GITLAB_DOMAIN/api/v4/projects/$org%2F$repository/repository/archive.tar.gz?sha=$branch_or_commit' -H 'Authorization: Bearer $GITLAB_TOKEN' | tar -zx" &
+	$EDITOR "$folder"
 }
 
 peek_default() {
